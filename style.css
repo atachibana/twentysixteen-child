@@ -1,0 +1,570 @@
+/*
+ Theme Name:   Twenty Sixteern Child
+ Description:  Twenty Sixteern Child Theme
+ Author:       Akira Tachibana
+ Author URI:   http://unofficialtokyo.com
+ Template:     twentysixteen
+ Version:      1.0.0
+ Text Domain:  twentysixteen
+*/
+
+/**********************************************************************
+ *  フォント
+ *********************************************************************/
+
+body, button, input, select, textarea,
+.entry-title,           /* 以下、明示指定されているものを上書き */
+.main-navigation,       /* 画面右上のメニュー */
+.comment-metadata,      /* コメントの日付 */
+.comment-reply-link,    /* コメントの返信ボタン */
+input[type="submit"],   /* 送信ボタン */
+.post-navigation,       /* 投稿単位のページナビゲーション */
+.post-navigation .post-title,
+.post-navigation div + div,
+.comments-title,        /* コメント */
+.comment-reply-title,
+.comment-notes,
+.comment-form label,
+.widget .widget-title,
+.logged-in-as {
+    font-family: "Trebuchet MS","Arial","Helvetica","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+}
+
+.site-title,
+.site-description,
+.page-title {
+    font-family: "Open Sans", "Trebuchet MS","Arial","Helvetica","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+}
+
+/**********************************************************************
+ *  サイト上部。サイト名など
+ *********************************************************************/
+
+body:not(.custom-background-image)::before {
+    border-top: medium solid #6495ed;       /* 画面トップに青線 */
+}
+
+.site-header {
+    padding-top: 0rem;      /* サイトタイトルの上が広すぎるので */
+    padding-bottom: 0rem;   /* サイトタイトルの下が広すぎるので */
+}
+
+.site-branding .site-title {    /* サイトのメインタイトル */
+    font-size: 2.1rem;
+    font-weight: 400;
+    letter-spacing: -0.1rem;    /* 文字間を少し寄せる */
+}
+
+.site-description {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+input[type="search"] {          /* 検索ボックス */
+    padding: 0.3rem 0.5rem;
+    font-size: 0.9rem;
+}
+
+.search-submit::before {        /* 検索ボックスの右側の虫眼鏡アイコン */
+    font-size: 18px;            /* アイコンの大きさ */
+    line-height: 35px;          /* アイコンの上部からの距離 */
+}
+
+/**********************************************************************
+ *  ホーム画面先頭の紹介エリア
+ *********************************************************************/
+
+.home-top-boxes {   /* 左右に空白。Android で微妙に横にはみ出ていたので */
+    margin: 0px 3px 0px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.home-top-box {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 1.3rem;
+    margin-bottom: 1rem;
+    width: 24%;                             /* 箱を4個並べる */
+    margin-right: 3px;
+    padding: 3px;
+}
+
+.home-top-box img {
+    border: thin solid #dcdcdc;
+    margin-bottom: 10px;
+    width: 100%;
+    box-shadow: 2px 2px 1px grey;           /* アイキャッチ画像に影 */
+    -moz-box-shadow:2px 2px 1px #aedaf2;
+    -webkit-box-shadow: 2px 2px 1px #aedaf2;
+
+}
+
+.home-top-box a {
+    color: black;							/* タイトルは黒にする */
+}
+
+/**********************************************************************
+ *  ページ単位のタイトル。青い文字のタイトルを青い角丸四角で囲む
+ *********************************************************************/
+
+.page-header {
+    border-style: none;     /* お葬式みたいな線を削除 */
+    margin-top: 0;          /* 上下の余計な余白を削除 */
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.page-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding: 0rem 0rem 0rem 0.5rem;
+    margin: 0 3px 0.5rem;
+
+    color: #6495ed;     /* 青い角丸四角で囲まれた青字のタイトル */
+    border: thin solid #6495ed;    
+    border-radius: 0.2rem;
+    -webkit-border-radius: 0.2rem;
+    -moz-border-radius: 0.2rem;
+    line-height: 1.5;
+}
+
+
+/**********************************************************************
+ *  エントリ
+ *********************************************************************/
+
+/*---------------------------------------------------------------------
+ *  エントリタイトル
+ *-------------------------------------------------------------------*/
+
+.entry-title {
+    font-size: 1.4rem;
+    font-weight: 400;                   /* 少し軽くする。元は700 */
+    padding-top: 1rem;
+    border-bottom: thin solid #6495ed;  /* 青い下線 */
+    padding-bottom: 0.5rem;             /* 青下線とタイトルの間の距離 */
+    margin-bottom: 0.5rem;              /* 青下線の下の距離 */
+}
+
+/*---------------------------------------------------------------------
+ *  エントリコンテンツとエントリフッターの位置
+ *  タイトルの下に日付やカテゴリーリストを置きたいのでここでクリア  
+ *  一部は Media Query 内
+ *-------------------------------------------------------------------*/
+
+body:not(.search-results) article:not(.type-page) .entry-content {
+    width: 77%;     					/* 本文の幅 */
+}
+
+body:not(.search-results) .cat-links, 
+body:not(.search-results) .tags-links, 
+body:not(.search-results) article:not(.sticky) .posted-on {
+    display: inline;    /* カテゴリー等をタイトル下に一行に並べたいので */
+}
+
+/*---------------------------------------------------------------------
+ *  エントリフッター (作成日、更新日、カテゴリー)
+ *  既存の entry-footer が言うこと聞かないので entry-footer-home 導入
+ *-------------------------------------------------------------------*/
+
+.entry-footer-home {
+    font-size: 1.0rem;
+    margin-top: 0rem;
+    margin-bottom: 0.5rem;      /* エントリーの日付やカテゴリーと本文の間 */
+}
+
+.entry-footer-home .posted-on,
+.entry-footer-home .cat-links {
+    margin-right: 0.5rem;       /* 日付とカテゴリーの間 */
+}
+
+.updated:not(.published) {
+    display: inline;            /* 更新日。hide されているので表示する */
+}
+
+.post-category {                /* タイトル下のカテゴリーは青色丸四角で囲む */
+    padding: 0.1rem 0.4rem;
+    border: thin solid #6495ed;
+    border-radius: 0.3rem;
+    color: #6495ed;
+}
+
+/*---------------------------------------------------------------------
+ *  アイキャッチ画像
+ *-------------------------------------------------------------------*/
+
+.post-thumbnail {
+    float: left;
+    width: 20%;             /* アイキャッチ画像は左側 20% */
+    min-width: 100px;   
+    margin: 0rem 0.5rem 0.5rem 0rem;
+    text-align: center;     /* アイキャッチ画像が正方形でない場合 */
+    
+    /* レスポンシブ対応により margin-right を 0 で上書きされる場合が
+       あるため、本文との間隔をここで確保 */
+    padding-right: 0.5rem;
+}
+
+a.post-thumbnail {
+    /* アイキャッチ画像のリンクの下線を削除する。でないと
+       画像の比率によって下線が表示される。*/
+    box-shadow: none;
+}
+
+img.attachment-post-thumbnail {
+    border: solid thin #d3d3d3;             /* アイキャッチ画像に枠線 */
+    box-shadow: 2px 2px 1px grey;           /* アイキャッチ画像に影 */
+    -moz-box-shadow:2px 2px 1px #aedaf2;
+    -webkit-box-shadow: 2px 2px 1px #aedaf2;
+}
+
+/*---------------------------------------------------------------------
+ *  記事と記事の間
+ *-------------------------------------------------------------------*/
+
+.site-main > article {
+    margin-bottom: 1rem;    /* 記事と記事の間が広すぎるので */
+}
+
+/*---------------------------------------------------------------------
+ *  記事内の要素
+ *-------------------------------------------------------------------*/
+
+.entry-content h1 {         /* 実際には「見出し1」は使用しない */
+    font-size: 1.4rem; 
+    font-weight: 400; 
+}
+    
+.entry-content h2 { 
+    font-size: 1.3rem; 
+    font-weight: 400; 
+    border-bottom: thin solid #6495ed;
+}
+
+.entry-content h3 { 
+    font-size: 1.2rem; 
+    font-weight: 400; 
+    border-left: 4px solid #6495ed;
+    padding-left: 0.5rem;
+}
+
+.entry-content p  {
+    margin-bottom: 1.2rem;      /* とても広いので狭くする */
+}
+
+blockquote {
+    font-size: 1rem;            /* フォントを本文と同じ大きさに */
+    font-style: normal;         /* 斜体を停止 */
+    border-left-width: 2px;     /* 横線を少し細く */
+}
+
+pre {
+    font-size: 0.9rem;          /* コードが多いので小さくする */
+}
+
+.entry-content img {
+    display: inline;        
+    border: thin solid #dcdcdc;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+/**********************************************************************
+ *  投稿単位のページナビゲーション
+ *  「前」と「次」を1行で左右に振り分けても良いが、ここではレスポン
+ *	シブ対応もあり、単純に左詰めの「前」行と、右詰めの「右」行の2行。
+ *********************************************************************/
+.post-navigation,
+.post-navigation .post-title,
+.post-navigation div + div {
+    border-style: none;     /* お葬式みたいな線を潰す */
+    font-size: 1.0rem;      /* 前や次が小さいのでまとめて同じ大きさに */
+    font-weight: 400;
+}
+
+div.nav-next {
+    text-align: right;                      /* 「次」は右寄せ */
+}
+
+.post-navigation a,
+.post-navigation .meta-nav {
+    padding: 0rem;                          /* 行間をつぶして狭く */
+    line-height: 1;
+    margin: 0rem;
+}
+
+nav.navigation {
+    border-top: medium solid #6495ed;       /* 領域の上下に青線 */
+    border-bottom: thin solid #6495ed;
+    padding: 0.5rem 0;                      /* 線との距離 */
+}
+
+/**********************************************************************
+ *  全体のページナビゲーション
+ *  黒い四角の代わりに、青い矢印のみとする
+ *********************************************************************/
+.pagination .nav-links::after,
+.pagination::after,
+.pagination .nav-links::before,
+.pagination::before {
+    display: none;                  /* 右端の黒い長方形を削除 */
+}
+
+.pagination .prev,
+.pagination .next {
+    background-color: transparent !important;   /* 黒い長方形を削除 */
+    color: #6495ed !important;                  /* 矢印は青色 */
+}
+
+/**********************************************************************
+ *  コメント
+ *********************************************************************/
+
+.comments-title,
+.comment-reply-title,
+.comment-notes,
+.comment-form label,
+.logged-in-as {
+    font-size: 1.0rem;
+    font-weight: 100;
+    border-style: none;     /* お葬式みたいな線を削除 */
+}
+
+.comments-title {
+    font-weight: 400;
+}
+
+.comment-form {
+    padding-top: 0.5em;     /* 「コメントを残す」と注意書きの間が広いので */
+}
+
+.comment-notes,
+.comment-form label,
+.logged-in-as {
+    font-size: 0.8rem;      /* 注意書き、ラベルのフォントが大きいので */
+}
+
+input[type="submit"] {
+    font-size: 0.8rem;      /* フォントが大きいので */
+}
+
+p.comment-form-comment,
+p.comment-form-author,
+p.comment-form-email,
+p.comment-form-url,
+p.form-submit {
+    margin-bottom: 0.5em;   /* 項目の間が広すぎるので */
+}
+
+.comments-area {
+    border-top: thin solid #6495ed;       /* 領域の上に青線 */
+    padding-bottom: 0.5rem;                 /* = 送信ボタンと下線までの距離 */
+    margin-bottom: 2rem;                    /* 間が広すぎるので */
+}
+
+.comment-list article {
+    padding: 0.2rem;        /* 周囲との間が広いので */
+}
+
+.comment-metadata {
+    margin-bottom: 0.5rem;  /* コメント日付とコメントの間を小さく */
+}
+
+.comment-reply-link {
+    margin-top: 0.5rem;     /* 「コメント返信」ボタンとコメントの間を小さく */
+}
+
+
+/**********************************************************************
+ *  レスポンシブ対応
+ *********************************************************************/
+
+.home-top-boxes,
+.page-title,
+.entry-header,
+.entry-footer-home {
+    margin-right: 7.6923%;
+    margin-left: 7.6923%;
+}
+
+.home-top-boxes {           /* home.php トップの特集を隠す */
+    display: none;
+}
+
+article .post-thumbnail {
+    margin-left: 7.6923%;
+}
+
+/**
+ * 14.1 - >= 710px
+ */
+@media screen and (min-width: 44.375em) {
+    .entry-content blockquote:not(.alignleft):not(.alignright) {
+        margin-left: 0rem;
+    }
+
+    /* site-title と site-description の領域 */
+    .site-branding {
+        margin-top:     0.5rem;
+        margin-bottom:  0.0rem;
+    }
+
+    .entry-content ul,
+    .entry-content ol {
+        margin-left: 2.5em;    /* マーカー込みでインデントを揃えたいので */
+    }
+
+    img.attachment-post-thumbnail {         /* アイキャッチ画像を中央揃え */
+        margin-left: auto;
+        margin-right: auto;     
+    }
+
+    .site {
+        margin: 10px 0 0;
+    }
+
+    body:not(.custom-background-image)::before {
+        height: 0;
+    }
+
+    .home-top-boxes {           /* home.php トップの特集を隠す */
+        display: none;
+    }
+}
+
+/**
+ * 14.3 - >= 910px
+ */
+@media screen and (min-width: 56.875em) {
+    .home-top-boxes,
+    .page-title,
+    .entry-header,
+    .entry-footer-home,
+    article .post-thumbnail {
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .entry-content {        /* 本文領域を右側に */
+        float: right;
+    }
+
+    .no-sidebar .entry-footer-home {
+        margin-right: 15%;
+        margin-left: 15%;
+    }
+    
+    .site-header-menu {
+        margin-top: 10px;
+        margin-bottom: 0px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
+    .home-top-boxes {           /* home.php トップの特集を出力 */
+        display: inline;
+    }
+}
+
+/**********************************************************************
+ *  プロフィール
+ *********************************************************************/
+
+.widget .author-title {         /* 名前 */
+    font-weight: 100;
+    font-size: 1rem;
+}
+
+.author-info {                  /* 説明 */
+    padding-top: 0.5rem;
+    margin-bottom: 1.0rem;
+    border-style: none;
+    display: flex;
+}
+
+.author-avatar {
+    text-align: center;         /* アバター画像等を中央揃え */
+}
+
+.author-avatar .avatar {        /* アバター画像の大きさ */
+    width: 80px;
+    height: 80px;
+    margin: 0 10px 5px 10px;
+}
+
+/**********************************************************************
+ *  ウィジェット
+ *********************************************************************/
+
+.widget {
+    border-style: none;         /* お葬式みたいな仕切り線を消す。*/
+    font-size: 1rem;            /* ウィジェット内のフォントが小さ過ぎ */
+    margin-bottom: 0.5rem;      /* ウィジェットどおしの間隔が広過ぎ */
+}
+
+.widget .widget-title {
+    border-bottom: solid thin #6495ed !important;   /* タイトルに下青線 */
+    padding-bottom: 0.4rem;                         /* 下線までの距離 */
+    margin-bottom: 0.8rem;                /* 最初のエントリーまでの距離 */
+    font-weight: 100;                   /* フォントが大きすぎるので */
+    font-size: 1rem;
+}
+
+.widget ul {
+    list-style-type: none;      /* リストのマーカーを消す */
+    margin: 0;                  /* 注意。サブカテゴリーのインデントも消える */
+    padding: 0;
+}
+
+.widget .cat-item {
+    border-bottom: 1px solid #dcdcdc;       /* カテゴリー間に線 */
+    padding: 0.3rem 0rem;       /* カテゴリー間が狭いので */
+}
+
+.widget .children .cat-item {
+    border-bottom: none;        /* 親子カテゴリーの間の線はなし */
+    padding: 0.3rem 0rem;       /* カテゴリー間が狭いので */
+}
+
+.widget .recentcomments {
+    border-bottom: 1px solid #dcdcdc;   /* コメントの間に線 */
+    padding: 0.5rem 0rem;               /* コメントと線の間 */
+    line-height: 125%;                  /* 行間を狭める */
+}
+
+/**********************************************************************
+ *  サイドバーのアイキャッチ画像付き記事一覧
+ *********************************************************************/
+
+.thumbnailed-article {
+    border-bottom: 1px solid #dcdcdc;   /* 記事ごとに灰色の区切り線 */
+    padding: 0.5rem 0;
+    line-height: 125%;
+    display: flex;
+}
+
+.thumbnailed-area {     /* 正方形でないアイキャッチ画像を中央揃えする */
+    width: 100px;
+    text-align: center;
+    margin-right: 0.3rem;
+}
+
+.thumbnailed-date {
+    font-weight: 100;
+    font-size: 0.9rem;                  /* 日付は少し小さく */
+}
+
+/**********************************************************************
+ *  プラグイン
+ *********************************************************************/
+
+li.collapsing.archives .sym {           /* Collapsing Archives プラグイン */
+    font-size: 0.8em !important;        /* マーカーが大きいので小さく */
+}
+
+.amazonjs_item .amazonjs_info h4 {
+    letter-spacing: 0rem;
+}

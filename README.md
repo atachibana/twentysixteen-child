@@ -8,5 +8,10 @@ Unofficial Web Site Tokyo URL: http://unofficialtokyo.com
 
 ## History
 
+Version 1.1 (7/Feb/2016)
+- Move Profile field to the bottom of Post and Page from sidebar
+- Fix Page layout error
+- Embed Googld AdSense custom marker at the bottom of Post and Page article
+
 Version 1.0 (31/Jan/2016)
 - Initial

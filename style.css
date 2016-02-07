@@ -155,7 +155,9 @@ input[type="search"] {          /* 検索ボックス */
  *  一部は Media Query 内
  *-------------------------------------------------------------------*/
 
-body:not(.search-results) article:not(.type-page) .entry-content {
+/* body:not(.search-results) article:not(.type-page) .entry-content { */
+/* body .entry-content { */
+body:not(.search-results) .entry-content {
     width: 77%;     					/* 本文の幅 */
 }
 
@@ -473,16 +475,16 @@ article .post-thumbnail {
  *  プロフィール
  *********************************************************************/
 
-.widget .author-title {         /* 名前 */
-    font-weight: 100;
-    font-size: 1rem;
+.author-info {                  /* プロフィール欄全体 */
+    padding: 1rem;
+    margin-top: 1.0rem;
+    margin-bottom: 1.0rem;
+    border: thin solid #dcdcdc;    
+    display: flex;
 }
 
-.author-info {                  /* 説明 */
-    padding-top: 0.5rem;
-    margin-bottom: 1.0rem;
-    border-style: none;
-    display: flex;
+.entry-content .author-title {
+    margin-bottom: 1rem;		/* 名前と紹介文の間を少し空ける */
 }
 
 .author-avatar {
@@ -492,7 +494,7 @@ article .post-thumbnail {
 .author-avatar .avatar {        /* アバター画像の大きさ */
     width: 80px;
     height: 80px;
-    margin: 0 10px 5px 10px;
+    margin: 0 20px 5px 10px;
 }
 
 /**********************************************************************

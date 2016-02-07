@@ -42,7 +42,12 @@
 				'separator'   => '<span class="screen-reader-text">, </span>',
 			) );
 
+			if ( '' !== get_the_author_meta( 'description' ) ) {
+				get_template_part( 'template-parts/biography' );
+			}
 		?>
 	</div><!-- .entry-content -->
 
-</article><!-- #post-## -->
+</article>
+<ins id="adsense-post-bottom" style="display: none;" class="adsbygoogle-placeholder"></ins>
+<!-- #post-## -->

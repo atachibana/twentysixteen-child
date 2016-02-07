@@ -22,7 +22,7 @@ get_header(); ?>
 		<div class="home-top-boxes">
 		<h2 class="page-title">Features</h2>
 		<?php
-			$args = array( 'include' => '559,550,902,1085', 'orderby' => 'post__in' );
+			$args = array( 'include' => '972,559,550,1085', 'orderby' => 'post__in' );
 			$postslist = get_posts( $args );
 			foreach ( $postslist as $post ) :
   				setup_postdata( $post );

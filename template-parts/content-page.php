@@ -26,7 +26,7 @@
 				'</span>'
 			);
 		?>
-	</footer><!-- .entry-footer -->
+	</footer><!-- .entry-footer-home -->
 
 	<div class="entry-content">
 		<?php
@@ -40,19 +40,12 @@
 			'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'twentysixteen' ) . ' </span>%',
 			'separator'   => '<span class="screen-reader-text">, </span>',
 		) );
+			if ( '' !== get_the_author_meta( 'description' ) ) {
+				get_template_part( 'template-parts/biography' );
+			}
 		?>
 	</div><!-- .entry-content -->
 
-	<?php
-		edit_post_link(
-			sprintf(
-				/* translators: %s: Name of current post */
-				__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'twentysixteen' ),
-				get_the_title()
-			),
-			'<footer class="entry-footer"><span class="edit-link">',
-			'</span></footer><!-- .entry-footer -->'
-		);
-	?>
-
-</article><!-- #post-## -->
+</article>
+<ins id="adsense-page-bottom" style="display: none;" class="adsbygoogle-placeholder"></ins>
+<!-- #post-## -->

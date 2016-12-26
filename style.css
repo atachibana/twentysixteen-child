@@ -467,25 +467,18 @@ article .post-thumbnail {
  *********************************************************************/
 
 .author-info {                  /* プロフィール欄全体 */
-    padding: 1rem;
-    margin-top: 1.0rem;
-    margin-bottom: 1.0rem;
-    border: thin solid #dcdcdc;    
-    display: flex;
+    border: thin solid #dcdcdc; /* 周囲に枠線 */
+    padding: 1rem;              /* 枠線とのスペース */
+    margin-bottom: 1.0rem;      /* 枠線下のスペース */
 }
 
 .entry-content .author-title {
-    margin-bottom: 1rem;		/* 名前と紹介文の間を少し空ける */
-}
-
-.author-avatar {
-    text-align: center;         /* アバター画像等を中央揃え */
+    border-bottom: none;        /* h2 の下線を除去 */
 }
 
 .author-avatar .avatar {        /* アバター画像の大きさ */
-    width: 80px;
-    height: 80px;
-    margin: 0 20px 5px 10px;
+    width: 80px;                /* 2倍にする */
+    height: 80px;               /* 2倍にする */
 }
 
 /**********************************************************************

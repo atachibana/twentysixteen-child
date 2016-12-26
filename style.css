@@ -154,13 +154,6 @@ input[type="search"] {          /* 検索ボックス */
  *  タイトルの下に日付やカテゴリーリストを置きたいのでここでクリア  
  *  一部は Media Query 内
  *-------------------------------------------------------------------*/
-
-/* body:not(.search-results) article:not(.type-page) .entry-content { */
-/* body .entry-content { */
-body:not(.search-results) .entry-content {
-    width: 77%;     					/* 本文の幅 */
-}
-
 body:not(.search-results) .cat-links, 
 body:not(.search-results) .tags-links, 
 body:not(.search-results) article:not(.sticky) .posted-on {
@@ -386,6 +379,7 @@ p.form-submit {
 
 .home-top-boxes,
 .page-title,
+.entry-content,
 .entry-header,
 .entry-footer-home {
     margin-right: 7.6923%;
@@ -443,15 +437,12 @@ article .post-thumbnail {
 @media screen and (min-width: 56.875em) {
     .home-top-boxes,
     .page-title,
+    .entry-content,
     .entry-header,
     .entry-footer-home,
     article .post-thumbnail {
         margin-right: 0;
         margin-left: 0;
-    }
-
-    .entry-content {        /* 本文領域を右側に */
-        float: right;
     }
 
     .no-sidebar .entry-footer-home {

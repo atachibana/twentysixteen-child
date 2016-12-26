@@ -7,13 +7,13 @@ function theme_enqueue_styles() {
         get_stylesheet_directory_uri() . '/style.css',
         array('parent-style')
     );
+    wp_enqueue_style( 'font-awesome', 'http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' );
     wp_enqueue_style( 'font-opensans', 'http://fonts.googleapis.com/css?family=Open+Sans' );
-    wp_enqueue_style( 'font-awesome', 'http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' );   
 }
 
 function custom_excerpt_length( $length ) {
-     return 150;    
-}   
+     return 150;
+}
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 function my_thumbnailed_size_setup() {
@@ -74,8 +74,8 @@ function twentysixteen_entry_taxonomies() {
     if ( $categories ) {
         foreach( $categories as $category ) {
             if ( $category->name != "Uncategorized" ) {
-                $categories_list .= '<span class="post-category"><a href="' . get_category_link( $category->term_id ) . '" title="' 
-                    . esc_attr( sprintf( __( "View all posts in %s" ), $category->name ) ) 
+                $categories_list .= '<span class="post-category"><a href="' . get_category_link( $category->term_id ) . '" title="'
+                    . esc_attr( sprintf( __( "View all posts in %s" ), $category->name ) )
                     . '">' . $category->cat_name . '</a></span>' . $separator;
             }
         }
@@ -115,7 +115,7 @@ function the_thumbnailed_article() {
     printf('</a><br />');
     printf('<span class="thumbnailed-date">%1$s</span>', get_the_date());
     printf('</div><!-- .thumbnailed-content -->');
-    
+
     printf('</div><!-- .thumbnailed-article -->');
 }
 

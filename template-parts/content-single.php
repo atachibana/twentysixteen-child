@@ -28,7 +28,10 @@
 		?>
 	</footer><!-- .entry-footer-home -->
 
+	<div class="entry-body">
+  <div class="entry-thumbnail">
     <?php twentysixteen_post_thumbnail(); ?>
+	</div><!-- .entry-thumbnail -->
 	<div class="entry-content">
 		<?php
 			the_content();
@@ -47,6 +50,7 @@
 			}
 		?>
 	</div><!-- .entry-content -->
+</div><!-- .entry-body -->
 
 </article>
 <ins id="adsense-post-bottom" style="display: none;" class="adsbygoogle-placeholder"></ins>

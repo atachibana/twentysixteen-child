@@ -28,12 +28,14 @@
 	?>
 	</footer><!-- .entry-footer-home -->
 
+	<div class="entry-body">
+  <div class="entry-thumbnail">
+    <?php twentysixteen_post_thumbnail(); ?>
+	</div><!-- .entry-thumbnail -->
 	<div class="entry-content">
-    <?php 
-	   	twentysixteen_post_thumbnail();
-    	twentysixteen_excerpt();
-	?>		
+    <?php	twentysixteen_excerpt(); ?>
 	</div> <!-- .entry-content -->
+  </div><!-- .entry-body -->
 
 </article><!-- #post-## -->
 

@@ -32,7 +32,10 @@
 		?>
 	</footer><!-- .entry-footer -->
 
+	<div class="entry-body">
+  <div class="entry-thumbnail">
     <?php twentysixteen_post_thumbnail(); ?>
+	</div><!-- .entry-thumbnail -->
 	<div class="entry-content">
 		<?php
 			/* translators: %s: Name of current post */
@@ -51,5 +54,6 @@
 			) );
 		?>
 	</div><!-- .entry-content -->
+</div><!-- .entry-body -->
 
 </article><!-- #post-## -->

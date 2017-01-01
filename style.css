@@ -95,10 +95,6 @@ input[type="search"] {          /* 検索ボックス */
     border: thin solid #dcdcdc;
     margin-bottom: 10px;
     width: 100%;
-    box-shadow: 2px 2px 1px grey;           /* アイキャッチ画像に影 */
-    -moz-box-shadow:2px 2px 1px #aedaf2;
-    -webkit-box-shadow: 2px 2px 1px #aedaf2;
-
 }
 
 .home-top-box a {
@@ -190,30 +186,21 @@ body:not(.search-results) article:not(.sticky) .posted-on {
 /*---------------------------------------------------------------------
  *  アイキャッチ画像
  *-------------------------------------------------------------------*/
-
-.post-thumbnail {
-    float: left;
-    width: 20%;             /* アイキャッチ画像は左側 20% */
-    min-width: 100px;   
-    margin: 0rem 0.5rem 0.5rem 0rem;
-    text-align: center;     /* アイキャッチ画像が正方形でない場合 */
-    
-    /* レスポンシブ対応により margin-right を 0 で上書きされる場合が
-       あるため、本文との間隔をここで確保 */
-    padding-right: 0.5rem;
+.entry-thumbnail {    
+    float: left;  /* entry-content に float:right が当たっているので flex は使えない */
+    width: 25%;   /* entry-content が 71%  */
+    min-width: 100px;
+    margin: 0.5rem;
 }
 
-a.post-thumbnail {
-    /* アイキャッチ画像のリンクの下線を削除する。でないと
-       画像の比率によって下線が表示される。*/
-    box-shadow: none;
+.post-thumbnail {
+    max-width: 160px;
+    display: block;   /* 160px 以上の場合は中央揃え */
+    margin: auto;
 }
 
 img.attachment-post-thumbnail {
     border: solid thin #d3d3d3;             /* アイキャッチ画像に枠線 */
-    box-shadow: 2px 2px 1px grey;           /* アイキャッチ画像に影 */
-    -moz-box-shadow:2px 2px 1px #aedaf2;
-    -webkit-box-shadow: 2px 2px 1px #aedaf2;
 }
 
 /*---------------------------------------------------------------------
@@ -379,19 +366,20 @@ p.form-submit {
 
 .home-top-boxes,
 .page-title,
-.entry-content,
+.entry-body,
 .entry-header,
 .entry-footer-home {
     margin-right: 7.6923%;
     margin-left: 7.6923%;
 }
 
-.home-top-boxes {           /* home.php トップの特集を隠す */
-    display: none;
+.entry-content {    /* 親テーマの margin 指定を打ち消す */
+  margin-right: 0;
+  margin-left: 0;  
 }
 
-article .post-thumbnail {
-    margin-left: 7.6923%;
+.home-top-boxes {           /* home.php トップの特集を隠す */
+    display: none;
 }
 
 /**
@@ -413,11 +401,6 @@ article .post-thumbnail {
         margin-left: 2.5em;    /* マーカー込みでインデントを揃えたいので */
     }
 
-    img.attachment-post-thumbnail {         /* アイキャッチ画像を中央揃え */
-        margin-left: auto;
-        margin-right: auto;     
-    }
-
     .site {
         margin: 10px 0 0;
     }
@@ -437,10 +420,9 @@ article .post-thumbnail {
 @media screen and (min-width: 56.875em) {
     .home-top-boxes,
     .page-title,
-    .entry-content,
+    .entry-body,
     .entry-header,
-    .entry-footer-home,
-    article .post-thumbnail {
+    .entry-footer-home {
         margin-right: 0;
         margin-left: 0;
     }

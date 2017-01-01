@@ -7,8 +7,8 @@ function theme_enqueue_styles() {
         get_stylesheet_directory_uri() . '/style.css',
         array('parent-style')
     );
-    wp_enqueue_style( 'font-awesome', 'http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' );
-    wp_enqueue_style( 'font-opensans', 'http://fonts.googleapis.com/css?family=Open+Sans' );
+    wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' );
+    wp_enqueue_style( 'font-opensans', 'https://fonts.googleapis.com/css?family=Open+Sans' );
 }
 
 function custom_excerpt_length( $length ) {
